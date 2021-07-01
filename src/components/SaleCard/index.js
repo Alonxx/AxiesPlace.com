@@ -17,10 +17,9 @@ const arraystats = [
 
 const SaleCard = ({axie, ETH}) => {
 	const [purity, setPurity] = useState(0);
-	const months = ['❤️', '💔', '💩', '💤', '🤒', '🤢', '🤑', '😭','Grrr...'];
+	const months = ['❤️', '💔', '💩', '💤', '🤒', '🤢', '🤑', '😭', 'Grrr...'];
 
 	const random = Math.floor(Math.random() * months.length);
-
 
 	useEffect(() => {
 		const result =
@@ -57,7 +56,11 @@ const SaleCard = ({axie, ETH}) => {
 					</div>
 					<div className='price'>
 						<h2 className='price_eth'>
-							Ξ {(axie.auction.currentPriceUSD / ETH).toFixed(2)}
+							Ξ
+							{(
+								axie.auction.currentPriceUSD &&
+								axie.auction.currentPriceUSD / ETH
+							).toFixed(2)}
 						</h2>
 						<h3 className='price_dollar'> ${axie.auction.currentPriceUSD} </h3>
 					</div>
