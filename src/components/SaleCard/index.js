@@ -17,9 +17,20 @@ const arraystats = [
 
 const SaleCard = ({axie, ETH}) => {
 	const [purity, setPurity] = useState(0);
-	const months = ['❤️', '💔', '💩', '💤', '🤒', '🤢', '🤑', '😭', 'Grrr...'];
+	const axieTalk = ['❤️', '💔', '💩', '💤', '🤒', '🤢', '🤑', '😭', 'Grrr...'];
+	const random = Math.floor(Math.random() * axieTalk.length);
 
-	const random = Math.floor(Math.random() * months.length);
+	const borderColor = {
+		Beast: '#ffb812',
+		Plant: '#6cc000',
+		Aquatic: '#00b8ce',
+		Reptile: '#00b8ce',
+		Dusk: '#129092',
+		Bird: '#ff8bbd',
+		Mech: '#c6bdd4',
+		Bug: '#ff5341',
+		Dawn: '#beceff',
+	};
 
 	useEffect(() => {
 		const result =
@@ -36,7 +47,10 @@ const SaleCard = ({axie, ETH}) => {
 
 	return (
 		<StyledContainer>
-			<div className='container_card'>
+			<div
+				className='container_card'
+				style={{borderLeft: `3px solid ${borderColor[axie.class]}`}}
+			>
 				<div className='grid'>
 					<div className='stats'>
 						{arraystats.map((el) => (
@@ -47,7 +61,7 @@ const SaleCard = ({axie, ETH}) => {
 						))}
 					</div>
 					<div className='img'>
-						<div className='tooltip'>{months[random]}</div>
+						<div className='tooltip'>{axieTalk[random]}</div>
 						<img src={axie.image} alt='axie' />
 					</div>
 					<div className='id'>#{axie.id}</div>

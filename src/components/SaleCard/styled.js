@@ -43,7 +43,7 @@ export const StyledContainer = styled.div`
 		height: 5rem;
 		border: 1.5px solid #293242;
 		border-radius: 0.455rem;
-		border-left: 3px solid orange;
+
 		padding: 0 0 0 0;
 		box-shadow: 0 0.091rem 0.227rem rgba(0, 0, 0, 0.075);
 		-webkit-box-shadow: 0 0.091rem 0.227rem rgba(0, 0, 0, 0.075);
