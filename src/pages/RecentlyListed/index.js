@@ -3,22 +3,28 @@ import {connect} from 'react-redux';
 import {getAxieLatest, getEthPrice} from '../../redux/actions';
 import {StyledContainer} from './styled';
 import SaleCard from '../../components/SaleCard';
+import Filters from '../../components/Filters';
 
-const RecentlyListed = ({getEthPrice, getAxieLatest, axies, ETH}) => {
+const RecentlyListed = ({getEthPrice, getAxieLatest, axies, ETH, filters}) => {
 	useEffect(() => {
 		getAxieLatest();
 		getEthPrice();
 	}, [getAxieLatest, getEthPrice]);
-	console.log(axies);
+
 
 	return (
 		<div className='content'>
 			<StyledContainer>
-				<div className='div_title'>
-					<h2>AXIES RECENTLY LISTED</h2>
-					<p>Los Axies mas nuevos</p>
+				<div className='title'>
+					<p>
+						View and buy the Axies you really need in a fast and personalized
+						way
+					</p>
 				</div>
-				<div className='div_container_cards'>
+				<div className='filters'>
+					<Filters />
+				</div>
+				<div className='cards'>
 					<div className='div_cards'>
 						{axies && axies.map((el) => <SaleCard axie={el} ETH={ETH} />)}
 					</div>
@@ -32,6 +38,7 @@ const mapStateToProps = (state) => {
 	return {
 		axies: state.axies,
 		ETH: state.ETH,
+		filters: state.filters,
 	};
 };
 

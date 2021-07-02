@@ -3,6 +3,13 @@ export const StyledContainer = styled.div`
 	display: flex;
 	justify-content: center;
 
+
+
+	a {
+		color: #eaeaeb;
+		text-decoration: none;
+	}
+
 	.tooltip {
 		border: 1px solid whitesmoke;
 		font-size: 0.67rem;
@@ -43,7 +50,6 @@ export const StyledContainer = styled.div`
 		height: 5rem;
 		border: 1.5px solid #293242;
 		border-radius: 0.455rem;
-
 		padding: 0 0 0 0;
 		box-shadow: 0 0.091rem 0.227rem rgba(0, 0, 0, 0.075);
 		-webkit-box-shadow: 0 0.091rem 0.227rem rgba(0, 0, 0, 0.075);
@@ -126,10 +132,10 @@ export const StyledContainer = styled.div`
 			.info {
 				width: 5rem;
 				grid-area: info;
-				font-size: 0.5rem;
+				font-size: 0.4rem;
 				position: relative;
 				right: 1rem;
-				top: 0.3rem;
+				top: 0.5rem;
 			}
 
 			.price {

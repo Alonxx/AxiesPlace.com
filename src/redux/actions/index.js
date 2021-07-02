@@ -41,3 +41,11 @@ export const getEthPrice = () => async (dispatch) => {
 		console.log(err);
 	}
 };
+
+export const setFilters = (filters) => async (dispatch) => {
+
+	dispatch({
+		type: 'SET_FILTERS',
+		payload: filters,
+	});
+};
