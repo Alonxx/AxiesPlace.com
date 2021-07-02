@@ -31,21 +31,6 @@ export const StyledContainer = styled.div`
 			}
 		}
 	}
-	.div_logo {
-		display: flex;
-		justify-content: flex-start;
-		width: 30%;
-		height: fit-content;
-		align-items: center;
-		margin-left: 4rem;
-
-		.logo {
-			display: flex;
-			text-decoration: none;
-			color: white;
-			text-shadow: 1px 2px 2px black;
-		}
-	}
 
 	@media (min-width: 720px) and (max-width: 1126px) {
 		.div_container {
