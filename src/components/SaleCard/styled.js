@@ -3,8 +3,6 @@ export const StyledContainer = styled.div`
 	display: flex;
 	justify-content: center;
 
-
-
 	a {
 		color: #eaeaeb;
 		text-decoration: none;
@@ -98,6 +96,7 @@ export const StyledContainer = styled.div`
 			}
 
 			.card {
+				transition: all 0.2s linear;
 				&:hover {
 					transform: scale(2.7);
 					position: relative;

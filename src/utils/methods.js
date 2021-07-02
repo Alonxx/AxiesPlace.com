@@ -1,7 +1,8 @@
 export const getFilterPrice = (filter, array) => {
+	let test = [...array];
 	switch (filter) {
 		case 'Lowest':
-			return array.sort((a, b) => {
+			return test.sort((a, b) => {
 				if (
 					Number(a.auction.currentPriceUSD) > Number(b.auction.currentPriceUSD)
 				) {
@@ -11,7 +12,7 @@ export const getFilterPrice = (filter, array) => {
 				}
 			});
 		case 'Highest':
-			return array.sort((a, b) => {
+			return test.sort((a, b) => {
 				if (
 					Number(a.auction.currentPriceUSD) < Number(b.auction.currentPriceUSD)
 				) {
@@ -21,14 +22,14 @@ export const getFilterPrice = (filter, array) => {
 				}
 			});
 		case 'All':
-			return array;
+			return test;
 		default:
-			return array;
+			return test;
 	}
 };
 
 export const getFilterClass = (filter, array) => {
-	console.log('filter', array);
+	console.log('filter', filter);
 
 	return filter === 'All' ? array : array.filter((el) => el.class === filter);
 };

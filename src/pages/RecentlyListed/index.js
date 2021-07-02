@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import {getAxieLatest, getEthPrice} from '../../redux/actions';
 import {StyledContainer} from './styled';
@@ -6,11 +6,21 @@ import SaleCard from '../../components/SaleCard';
 import Filters from '../../components/Filters';
 
 const RecentlyListed = ({getEthPrice, getAxieLatest, axies, ETH, filters}) => {
+	const updateAxies = () => {
+		getAxieLatest();
+		getEthPrice();
+	};
+	const [timer, setTimer] = useState();
+
+	const timerUpdateAxies = () => {
+		setTimer(setInterval(updateAxies, 15000));
+	};
+
 	useEffect(() => {
 		getAxieLatest();
 		getEthPrice();
+		timerUpdateAxies();
 	}, [getAxieLatest, getEthPrice]);
-
 
 	return (
 		<div className='content'>

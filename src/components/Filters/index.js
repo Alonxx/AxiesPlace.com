@@ -1,6 +1,8 @@
 import {connect} from 'react-redux';
 import {StyledContainer, Button} from './styled';
 import {setFilters} from '../../redux/actions';
+import {BsFilter} from 'react-icons/bs';
+import {IoPricetagSharp} from 'react-icons/io5';
 
 const arrayClass = [
 	{name: 'All', color: '#eaeaeb'},
@@ -29,7 +31,9 @@ const Filters = ({filters, setFilters}) => {
 			<div className='div_filter_container'>
 				<div className='div_filter_content'>
 					<div className='div_filter_class'>
-						Class:
+						<span className='filter_icon'>
+							<BsFilter />
+						</span>
 						{arrayClass.map((el, i) => (
 							<Button
 								key={i}
@@ -44,7 +48,7 @@ const Filters = ({filters, setFilters}) => {
 						))}
 					</div>
 					<div className='div_filter_price'>
-						Price:
+						<span className='filter_icon'>Ξ</span>
 						{arrayPrice.map((el, i) => (
 							<Button
 								key={i}
@@ -63,6 +67,41 @@ const Filters = ({filters, setFilters}) => {
 		</StyledContainer>
 	);
 };
+
+/* 		<div className='div_filter_container'>
+			<div className='div_filter_content'>
+				<div className='div_filter_class'>
+					Class:
+					{arrayClass.map((el, i) => (
+						<Button
+							key={i}
+							onClick={(e) => handleOnClick(e)}
+							name='class'
+							value={el.name}
+							color={el.name}
+							text={filters.class === el.name ? el.name : null}
+						>
+							{el.name}
+						</Button>
+					))}
+				</div>
+				<div className='div_filter_price'>
+					Price:
+					{arrayPrice.map((el, i) => (
+						<Button
+							key={i}
+							onClick={(e) => handleOnClick(e)}
+							name='price'
+							color={el}
+							value={el}
+							text={filters.price === el ? el : null}
+						>
+							{el}
+						</Button>
+					))}
+				</div>
+			</div>
+		</div>; */
 
 const mapStateToProps = (state) => {
 	return {

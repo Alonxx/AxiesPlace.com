@@ -1,8 +1,21 @@
 import styled, {css} from 'styled-components';
+
+export const Dropwmenu = styled.div``;
+
 export const StyledContainer = styled.div`
 	display: flex;
 	justify-content: center;
+
 	.div_filter_container {
+
+		width: 24rem;
+		height: 3rem;
+		border: 1.5px solid #293242;
+		border-radius: 5px;
+		padding: 0 0 0 0;
+		box-shadow: 0 0.091rem 0.227rem rgba(0, 0, 0, 0.075);
+		-webkit-box-shadow: 0 0.091rem 0.227rem rgba(0, 0, 0, 0.075);
+		-moz-box-shadow: 0 0.091rem 0.227rem rgba(0, 0, 0, 0.075);
 		.div_filter_content {
 			font-size: 0.6rem;
 
@@ -15,6 +28,10 @@ export const StyledContainer = styled.div`
 				padding: 0.3rem;
 			}
 		}
+	}
+
+	.filter_icon{
+		font-size: 0.6rem;
 	}
 `;
 

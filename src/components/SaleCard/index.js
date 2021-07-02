@@ -7,7 +7,7 @@ import HP from '../../assets/HP.svg';
 import MORALE from '../../assets/MORALE.svg';
 import SKILL from '../../assets/SKILL.svg';
 import SPEED from '../../assets/SPEED.svg';
-import {Link} from 'react-router-dom';
+
 
 const arraystats = [
 	{img: HP, stat: 'hp'},

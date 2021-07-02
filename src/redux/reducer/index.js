@@ -16,7 +16,10 @@ const reducer = (state = initialState, {payload, type}) => {
 			return {
 				...state,
 				axiesOrigin: payload,
-				axies: getFilterPrice(state.filters.price, payload),
+				axies: getFilterPrice(
+					state.filters.price,
+					getFilterClass(state.filters.class, payload)
+				),
 			};
 		case 'GET_ETH_PRICE':
 			return {
@@ -24,7 +27,7 @@ const reducer = (state = initialState, {payload, type}) => {
 				ETH: payload,
 			};
 		case 'SET_FILTERS':
-			console.log('aqui', state.axiesOrigin);
+
 			return {
 				...state,
 				filters: {
