@@ -11,6 +11,7 @@ const GlobalGrid = styled.div`
 
 	.nav {
 		grid-area: nav;
+		margin-bottom: 0.2rem;
 	}
 
 	.news {
