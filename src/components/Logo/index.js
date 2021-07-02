@@ -31,6 +31,7 @@ const Logo = () => {
 				AXIES
 				<img className='image_logo' src={logo} alt='logo' />
 				PLACE
+				<span className='version'> BETA</span>
 			</h3>
 		</StyledContainer>
 	);

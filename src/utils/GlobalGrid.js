@@ -1,24 +1,29 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 const GlobalGrid = styled.div`
-  width: 100%;
-  height: fit-content;
-  display: grid;
-  grid-template-areas:
-    "nav     nav    nav"
-    "content   content   content"
-    "footer footer footer";
+	width: 100%;
+	height: fit-content;
+	display: grid;
+	grid-template-areas:
+		'nav     nav    nav'
+		'news    news    news'
+		'content   content   content'
+		'footer footer footer';
 
-  .nav {
-    grid-area: nav;
-    margin-bottom: 5rem;
-  }
+	.nav {
+		grid-area: nav;
+	}
 
-  .content {
-    grid-area: content;
-  }
-  .footer {
-    grid-area: footer;
-  }
+	.news {
+		grid-area: news;
+		margin-bottom: 3rem;
+	}
+
+	.content {
+		grid-area: content;
+	}
+	.footer {
+		grid-area: footer;
+	}
 `;
 
 export default GlobalGrid;

@@ -6,20 +6,31 @@ export const StyledContainer = styled.div`
 	color: white;
 	text-shadow: 1px 2px 2px black;
 
+	display: flex;
+	justify-content: flex-start;
+	position: relative;
+	bottom: 0.5rem;
+	width: 30%;
+	height: fit-content;
+	align-items: center;
+	margin-left: 4rem;
 
-		display: flex;
-		justify-content: flex-start;
+	.logo_description {
+		color: whitesmoke;
+		font-size: 0.4rem;
+		text-shadow: 0;
+	}
+
+	.image_logo {
 		position: relative;
-		bottom: 0.5rem;
-		width: 30%;
-		height: fit-content;
-		align-items: center;
-		margin-left: 4rem;
+		width: 2.3rem;
+		bottom: -0.5rem;
+	}
 
-		.image_logo {
-			position: relative;
-			width: 2.3rem;
-			bottom: -0.5rem;
-		}
-	
+	.version {
+		font-size: 0.5rem;
+		position: relative;
+		bottom: -0.3rem;
+		right: 0rem;
+	}
 `;
