@@ -98,7 +98,7 @@ export const StyledContainer = styled.div`
 			.card {
 				transition: all 0.2s linear;
 				&:hover {
-					transform: scale(2.7);
+					transform: scale(2.8);
 					position: relative;
 					z-index: 1;
 				}
