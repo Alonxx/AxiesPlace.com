@@ -1,12 +1,12 @@
 import {StyledContainer} from './styled';
-import Logo from '../Logo'
+import Logo from '../Logo';
 const arrayMenu = ['Recently Listed'];
 
 const Nav = () => {
 	return (
 		<div className='nav'>
 			<StyledContainer>
-				<Logo/>
+				<Logo />
 				<div className='div_container'>
 					<div className='div_buttons'>
 						{arrayMenu &&

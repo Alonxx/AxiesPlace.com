@@ -1,17 +1,6 @@
 import logo from '../../assets/logo.png';
 import {StyledContainer} from './styled';
 
-const borderColor = {
-	Beast: '#ffb812',
-	Plant: '#6cc000',
-	Aquatic: '#00b8ce',
-	Reptile: '#dc8be4',
-	Dusk: '#129092',
-	Bird: '#ff8bbd',
-	Mech: '#c6bdd4',
-	Bug: '#ff5341',
-	Dawn: '#beceff',
-};
 
 const Color = [
 	'#ffb812',

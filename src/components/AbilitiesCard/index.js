@@ -11,10 +11,6 @@ const AbilitiesCard = ({abilitie, clase}) => {
 		effectIconUrl,
 	} = abilitie;
 
-	
-
-	//src="https://marketplace.axieinfinity.com/static/image/card-material/bg-reptile.png"
-
 	return (
 		<StyledContainer>
 			<div className='div_card card'>
@@ -41,7 +37,7 @@ const AbilitiesCard = ({abilitie, clase}) => {
 					>
 						{defense}
 					</h2>
-					<img className='card_icon' src={effectIconUrl} />
+					<img className='card_icon' src={effectIconUrl} alt='card-icon' />
 
 					<h2 className='card_description'>{description}</h2>
 				</div>

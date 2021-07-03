@@ -1,7 +1,7 @@
 import {getFilterPrice, getFilterClass} from '../../utils/methods';
 
 const initialState = {
-	axies: [],
+	axies: false,
 	axiesOrigin: [],
 	ETH: 0,
 	filters: {

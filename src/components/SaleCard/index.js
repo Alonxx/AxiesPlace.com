@@ -44,29 +44,19 @@ const SaleCard = ({axie, ETH}) => {
 			}, 0);
 
 		setPurity(result);
-	}, []);
+	}, [axie]);
 
-	//href='javascript:void(0)'
-	//eslintjsx-a11y/anchor-is-valid
-	return (
-		<StyledContainer>
-			<a
-				href={
-					media.matches
-						? 'javascript:void(0)'
-						: `https://marketplace.axieinfinity.com/axie/${axie.id}`
-				}
-				target={media.matches ? false : '_blank'}
-				rel={media.matches ? false : 'noreferrer'}
-			>
+	if (media.matches) {
+		return (
+			<StyledContainer>
 				<div
 					className='container_card'
 					style={{borderLeft: `3px solid ${borderColor[axie.class]}`}}
 				>
 					<div className='grid'>
 						<div className='stats'>
-							{arraystats.map((el) => (
-								<span>
+							{arraystats.map((el, i) => (
+								<span key={i}>
 									<img src={el.img} alt='stats' />
 									<span className='stats_text'>{axie.stats[el.stat]}</span>
 								</span>
@@ -108,6 +98,7 @@ const SaleCard = ({axie, ETH}) => {
 								axie.parts.map((el, i) =>
 									i > 1 ? (
 										<AbilitiesCard
+											key={i}
 											abilitie={el.abilities[0]}
 											clase={el.class === 'Aquatic' ? 'aqua' : el.class}
 										/>
@@ -116,9 +107,69 @@ const SaleCard = ({axie, ETH}) => {
 						</div>
 					</div>
 				</div>
-			</a>
-		</StyledContainer>
-	);
+			</StyledContainer>
+		);
+	} else {
+		return (
+			<StyledContainer>
+				<a
+					href={`https://marketplace.axieinfinity.com/axie/${axie.id}`}
+					target={'_blank'}
+					rel={'noreferrer'}
+				>
+					<div
+						className='container_card'
+						style={{borderLeft: `3px solid ${borderColor[axie.class]}`}}
+					>
+						<div className='grid'>
+							<div className='stats'>
+								{arraystats.map((el, i) => (
+									<span key={i}>
+										<img src={el.img} alt='stats' />
+										<span className='stats_text'>{axie.stats[el.stat]}</span>
+									</span>
+								))}
+							</div>
+							<div className='img'>
+								<div className='tooltip'>{axieTalk[random]}</div>
+								<img src={axie.image} alt='axie' />
+							</div>
+							<div className='id'>#{axie.id}</div>
+							<div className='info'>
+								<h3>
+									BREED: {axie.breedCount}/7 <br></br> PURITY: {purity}/6
+								</h3>
+							</div>
+							<div className='price'>
+								<h2 className='price_eth'>
+									Ξ{' '}
+									{(axie.auction && axie.auction.currentPriceUSD / ETH).toFixed(
+										2
+									)}
+								</h2>
+								<h3 className='price_dollar'>
+									{' '}
+									${axie.auction.currentPriceUSD}{' '}
+								</h3>
+							</div>
+							<div className='cards'>
+								{axie.parts &&
+									axie.parts.map((el, i) =>
+										i > 1 ? (
+											<AbilitiesCard
+												key={i}
+												abilitie={el.abilities[0]}
+												clase={el.class === 'Aquatic' ? 'aqua' : el.class}
+											/>
+										) : null
+									)}
+							</div>
+						</div>
+					</div>
+				</a>
+			</StyledContainer>
+		);
+	}
 };
 
 export default SaleCard;

@@ -4,6 +4,7 @@ import {getAxieLatest, getEthPrice} from '../../redux/actions';
 import {StyledContainer} from './styled';
 import SaleCard from '../../components/SaleCard';
 import Filters from '../../components/Filters';
+import Spinner from '../../components/Spinner';
 
 const RecentlyListed = ({getEthPrice, getAxieLatest, axies, ETH, filters}) => {
 	const updateAxies = () => {
@@ -37,7 +38,11 @@ const RecentlyListed = ({getEthPrice, getAxieLatest, axies, ETH, filters}) => {
 				</div>
 				<div className='cards'>
 					<div className='div_cards'>
-						{axies && axies.map((el) => <SaleCard axie={el} ETH={ETH} />)}
+						{axies ? (
+							axies.map((el, i) => <SaleCard key={i} axie={el} ETH={ETH} />)
+						) : (
+							<Spinner />
+						)}
 					</div>
 				</div>
 			</StyledContainer>

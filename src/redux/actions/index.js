@@ -32,7 +32,7 @@ export const getEthPrice = () => async (dispatch) => {
 			query: QUERY_GET_ETH,
 		};
 		const res = await axios.post(AXIE_API, body);
-		console.log(res.data.data.exchangeRate.eth.usd);
+
 		dispatch({
 			type: 'GET_ETH_PRICE',
 			payload: res.data.data.exchangeRate.eth.usd,
@@ -43,7 +43,6 @@ export const getEthPrice = () => async (dispatch) => {
 };
 
 export const setFilters = (filters) => async (dispatch) => {
-
 	dispatch({
 		type: 'SET_FILTERS',
 		payload: filters,

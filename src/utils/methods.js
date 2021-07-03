@@ -29,7 +29,6 @@ export const getFilterPrice = (filter, array) => {
 };
 
 export const getFilterClass = (filter, array) => {
-	console.log('filter', filter);
 
 	return filter === 'All' ? array : array.filter((el) => el.class === filter);
 };
