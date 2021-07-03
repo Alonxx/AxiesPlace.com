@@ -154,6 +154,14 @@ export const StyledContainer = styled.div`
 			}
 		}
 
+		.shop_icon {
+			display: none;
+			position: relative;
+			bottom: 4.4rem;
+			left: 7rem;
+			font-size: 1rem;
+		}
+
 		@keyframes float {
 			0% {
 				transform: translatey(0px);
@@ -163,6 +171,14 @@ export const StyledContainer = styled.div`
 			}
 			100% {
 				transform: translatey(0px);
+			}
+		}
+	}
+
+	@media screen and (max-width: 719px) {
+		.container_card {
+			.shop_icon {
+				display: block;
 			}
 		}
 	}

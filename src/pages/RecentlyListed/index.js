@@ -27,8 +27,9 @@ const RecentlyListed = ({getEthPrice, getAxieLatest, axies, ETH, filters}) => {
 			<StyledContainer>
 				<div className='title'>
 					<p>
-						View and buy the Axies you really need in a fast and personalized
-						way
+						See the last 18 axies for sale, in real time!
+						<br /> you can filter by class and price. <br />
+						The list is updated each time Axies is put on sale.
 					</p>
 				</div>
 				<div className='filters'>

@@ -24,12 +24,37 @@ export const StyledContainer = styled.div`
 		display: flex;
 		justify-content: center;
 		.div_cards {
-			margin-top: 1rem;
+			margin-top: -17rem;
 			display: grid;
 			grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 			grid-gap: 0.5rem;
 			width: 65rem;
 			height: fit-content;
+		}
+	}
+
+	@media screen and (max-width: 719px) {
+		width: 99vw;
+		overflow: hidden;
+		grid-template-areas:
+			'title'
+			'filters'
+			'cards';
+		.title {
+			grid-area: title;
+			text-align: center;
+			color: #eaeaeb;
+			font-size: 0.7rem;
+		}
+
+		.cards {
+			.div_cards {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(20rem, 0fr));
+				grid-gap: 0.5rem;
+				width: 20rem;
+				height: fit-content;
+			}
 		}
 	}
 `;

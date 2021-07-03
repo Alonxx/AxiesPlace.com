@@ -31,23 +31,13 @@ export const StyledContainer = styled.div`
 		}
 	}
 
-	@media (min-width: 720px) and (max-width: 1126px) {
-		.div_container {
-			.div_buttons {
-				margin-left: 8rem;
-			}
-		}
-	}
 	@media screen and (max-width: 719px) {
+		width: 99vw;
 		overflow: hidden;
 		.div_container {
-			position: absolute;
-			width: 90%;
+			width: 0%;
 			.div_buttons {
-				margin-left: 0;
-				width: 90%;
-				display: flex;
-				justify-content: space-between;
+				display: none;
 			}
 		}
 	}

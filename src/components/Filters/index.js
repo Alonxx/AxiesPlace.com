@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
-import {StyledContainer, Button} from './styled';
+import {Button, Dropwmenu} from './styled';
 import {setFilters} from '../../redux/actions';
-import {BsFilter} from 'react-icons/bs';
-import {IoPricetagSharp} from 'react-icons/io5';
+import {MdKeyboardArrowDown} from 'react-icons/md';
+import {useState} from 'react';
 
 const arrayClass = [
 	{name: 'All', color: '#eaeaeb'},
@@ -20,15 +20,63 @@ const arrayClass = [
 const arrayPrice = ['All', 'Lowest', 'Highest'];
 
 const Filters = ({filters, setFilters}) => {
+	const [showDropwmenu, setShowDropwMenu] = useState(false);
+
 	const handleOnClick = (e) => {
 		setFilters({...filters, [e.target.name]: e.target.value});
+		setShowDropwMenu(false);
 	};
 
-	console.log(filters);
-
 	return (
-		<StyledContainer>
-			<div className='div_filter_container'>
+		<Dropwmenu>
+			<button
+				className='dropwmenu'
+				onClick={() => setShowDropwMenu(!showDropwmenu)}
+			>
+				Filters
+				<span className={'icon'}>
+					<h1>
+						<MdKeyboardArrowDown />
+					</h1>
+				</span>
+			</button>
+			<div
+				className={showDropwmenu ? 'dropdown-content show' : 'dropdown-content'}
+			>
+				<span className='sub_title'>Class</span>
+				{arrayClass.map((el, i) => (
+					<Button
+						className={'sub_dropdown'}
+						key={i}
+						onClick={(e) => handleOnClick(e)}
+						name='class'
+						value={el.name}
+						color={el.name}
+						text={filters.class === el.name ? el.name : null}
+					>
+						{el.name}
+					</Button>
+				))}
+				<span className='sub_title'>Price</span>
+				{arrayPrice.map((el, i) => (
+					<Button
+						className='sub_dropdown'
+						key={i}
+						onClick={(e) => handleOnClick(e)}
+						name='price'
+						color={el}
+						value={el}
+						text={filters.price === el ? el : null}
+					>
+						{el}
+					</Button>
+				))}
+			</div>
+		</Dropwmenu>
+	);
+};
+
+/* 		<			<div className='div_filter_container'>
 				<div className='div_filter_content'>
 					<div className='div_filter_class'>
 						<span className='filter_icon'>
@@ -63,45 +111,7 @@ const Filters = ({filters, setFilters}) => {
 						))}
 					</div>
 				</div>
-			</div>
-		</StyledContainer>
-	);
-};
-
-/* 		<div className='div_filter_container'>
-			<div className='div_filter_content'>
-				<div className='div_filter_class'>
-					Class:
-					{arrayClass.map((el, i) => (
-						<Button
-							key={i}
-							onClick={(e) => handleOnClick(e)}
-							name='class'
-							value={el.name}
-							color={el.name}
-							text={filters.class === el.name ? el.name : null}
-						>
-							{el.name}
-						</Button>
-					))}
-				</div>
-				<div className='div_filter_price'>
-					Price:
-					{arrayPrice.map((el, i) => (
-						<Button
-							key={i}
-							onClick={(e) => handleOnClick(e)}
-							name='price'
-							color={el}
-							value={el}
-							text={filters.price === el ? el : null}
-						>
-							{el}
-						</Button>
-					))}
-				</div>
-			</div>
-		</div>; */
+			</div> */
 
 const mapStateToProps = (state) => {
 	return {

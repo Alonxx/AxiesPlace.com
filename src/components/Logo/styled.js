@@ -33,4 +33,13 @@ export const StyledContainer = styled.div`
 		bottom: -0.3rem;
 		right: 0rem;
 	}
+
+	@media screen and (max-width: 719px) {
+	
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		width: 100%;
+		margin-left: 0rem;
+	}
 `;
