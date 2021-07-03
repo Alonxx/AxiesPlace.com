@@ -76,7 +76,7 @@ const SaleCard = ({axie, ETH}) => {
 							<h2 className='price_eth'>
 								Ξ{' '}
 								{(axie.auction && axie.auction.currentPriceUSD / ETH).toFixed(
-									2
+									3
 								)}
 							</h2>
 							<h3 className='price_dollar'>
@@ -144,7 +144,7 @@ const SaleCard = ({axie, ETH}) => {
 								<h2 className='price_eth'>
 									Ξ{' '}
 									{(axie.auction && axie.auction.currentPriceUSD / ETH).toFixed(
-										2
+										3
 									)}
 								</h2>
 								<h3 className='price_dollar'>
