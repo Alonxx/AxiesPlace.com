@@ -17,7 +17,7 @@ const arraystats = [
 
 const SaleCard = ({axie, ETH}) => {
 	const [purity, setPurity] = useState(0);
-	const axieTalk = ['❤️', '💔', '💩', '💤', '🤒', '🤢', '🤑', '😭', 'Grrr...'];
+	const axieTalk = ['❤️', '💔', '💩', '💤', '😍', '🤢', '🤑', '😭', 'Grrr...'];
 	const random = Math.floor(Math.random() * axieTalk.length);
 
 	let media = window.matchMedia('(max-width: 719px)');
