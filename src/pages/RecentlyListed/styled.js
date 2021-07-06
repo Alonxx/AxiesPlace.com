@@ -36,6 +36,14 @@ export const StyledContainer = styled.div`
 		}
 	}
 
+	@media screen and (max-width: 1380px) {
+		.coins {
+			position: absolute;
+			left: -9rem;
+			top: 9rem;
+		}
+	}
+
 	@media screen and (max-width: 719px) {
 		margin-top: -1.5rem;
 
@@ -67,14 +75,6 @@ export const StyledContainer = styled.div`
 				width: 20rem;
 				height: fit-content;
 			}
-		}
-	}
-
-	@media screen and (max-width: 1380px) {
-		.coins {
-			position: absolute;
-			left: -9rem;
-			top: 9rem;
 		}
 	}
 `;
