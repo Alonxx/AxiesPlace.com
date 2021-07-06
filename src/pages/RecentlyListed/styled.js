@@ -5,7 +5,7 @@ export const StyledContainer = styled.div`
 	display: grid;
 	grid-template-areas:
 		'title title title'
-		'filters filters filters'
+		'coins filters filters'
 		'cards cards cards';
 
 	.title {
@@ -15,6 +15,9 @@ export const StyledContainer = styled.div`
 		font-size: 0.7rem;
 	}
 
+	.coins {
+		grid-area: coins;
+	}
 	.filters {
 		grid-area: filters;
 		margin-top: 1.5rem;
@@ -34,10 +37,13 @@ export const StyledContainer = styled.div`
 	}
 
 	@media screen and (max-width: 719px) {
+		margin-top: -1.5rem;
+
 		width: 99vw;
 		overflow: hidden;
 		grid-template-areas:
 			'title'
+			'coins'
 			'filters'
 			'cards';
 		.title {
@@ -45,6 +51,12 @@ export const StyledContainer = styled.div`
 			text-align: center;
 			color: #eaeaeb;
 			font-size: 0.7rem;
+		}
+
+		.coins {
+			position: absolute;
+			right: 12rem;
+			top: 10.7rem;
 		}
 
 		.cards {
@@ -55,6 +67,14 @@ export const StyledContainer = styled.div`
 				width: 20rem;
 				height: fit-content;
 			}
+		}
+	}
+
+	@media screen and (max-width: 1380px) {
+		.coins {
+			position: absolute;
+			left: -9rem;
+			top: 9rem;
 		}
 	}
 `;

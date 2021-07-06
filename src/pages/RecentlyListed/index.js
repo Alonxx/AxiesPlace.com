@@ -5,6 +5,7 @@ import {StyledContainer} from './styled';
 import SaleCard from '../../components/SaleCard';
 import Filters from '../../components/Filters';
 import Spinner from '../../components/Spinner';
+import CoinsPrice from '../../components/CoinsPrice';
 
 const RecentlyListed = ({getEthPrice, getAxieLatest, axies, ETH, filters}) => {
 	const updateAxies = () => {
@@ -32,6 +33,9 @@ const RecentlyListed = ({getEthPrice, getAxieLatest, axies, ETH, filters}) => {
 						<br /> you can filter by class and price. <br />
 						The list is updated each time Axies is put on sale.
 					</p>
+				</div>
+				<div className='coins'>
+					<CoinsPrice />
 				</div>
 				<div className='filters'>
 					<Filters />

@@ -8,6 +8,10 @@ const initialState = {
 		class: 'All',
 		price: 'All',
 	},
+	coins: {
+		eth: 0,
+		slp: 0,
+	},
 };
 
 const reducer = (state = initialState, {payload, type}) => {
@@ -27,7 +31,6 @@ const reducer = (state = initialState, {payload, type}) => {
 				ETH: payload,
 			};
 		case 'SET_FILTERS':
-
 			return {
 				...state,
 				filters: {
@@ -38,6 +41,14 @@ const reducer = (state = initialState, {payload, type}) => {
 					payload.price,
 					getFilterClass(payload.class, state.axiesOrigin)
 				),
+			};
+		case 'SET_COINS':
+			return {
+				...state,
+				coins: {
+					eth: payload.eth,
+					slp: payload.slp,
+				},
 			};
 		default:
 			return state;

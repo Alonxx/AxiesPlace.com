@@ -3,6 +3,7 @@ import {
 	QUERY_GET_AXIE_LATEST,
 	AXIE_API,
 	QUERY_GET_ETH,
+	COIN_API,
 } from '../../utils/constants';
 
 export const getAxieLatest = () => async (dispatch) => {
@@ -36,6 +37,23 @@ export const getEthPrice = () => async (dispatch) => {
 		dispatch({
 			type: 'GET_ETH_PRICE',
 			payload: res.data.data.exchangeRate.eth.usd,
+		});
+	} catch (err) {
+		console.log(err);
+	}
+};
+
+export const setCoins = () => async (dispatch) => {
+	try {
+		const slp = await axios.get(COIN_API + '/smooth-love-potion');
+		const eth = await axios.get(COIN_API + '/ethereum');
+
+		dispatch({
+			type: 'SET_COINS',
+			payload: {
+				eth: eth.data.market_data.current_price.usd,
+				slp: slp.data.market_data.current_price.usd,
+			},
 		});
 	} catch (err) {
 		console.log(err);

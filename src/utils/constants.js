@@ -1,5 +1,7 @@
 export const AXIE_API = 'https://axieinfinity.com/graphql-server-v2/graphql';
 
+export const COIN_API = 'https://api.coingecko.com/api/v3/coins';
+
 export const QUERY_GET_ETH = `query NewEthExchangeRate {
   exchangeRate {
     eth {
