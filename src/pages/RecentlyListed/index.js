@@ -15,7 +15,7 @@ const RecentlyListed = ({getEthPrice, getAxieLatest, axies, ETH, filters}) => {
 	const [timer, setTimer] = useState();
 
 	const timerUpdateAxies = () => {
-		setTimer(setInterval(updateAxies, 15000));
+		setTimer(setInterval(updateAxies, 10000));
 	};
 
 	useEffect(() => {
